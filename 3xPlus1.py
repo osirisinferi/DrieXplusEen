@@ -9,19 +9,21 @@ def collatz(number, round):
     else:
         result = int(number / 2)
     print("Ronde: {}, oude getal: {}, nieuwe getal: {}".format(round, number, result))
-    collatz(result, round+1)
+    return result, round+1
 
 
 def main():
-    start = None
+    getal = None
+    start = 1
 
     try:
-        start = int(input("Vul begin-getal in: "))
+        getal = int(input("Vul begin-getal in: "))
     except ValueError:
         print("Oeps, graag een positief heel getal boven 0 invullen.")
         exit(1)
 
-    collatz(start, 1)
+    while getal != 1:
+        getal, start = collatz(getal, start)
 
 
 if __name__ == "__main__":
