@@ -18,6 +18,8 @@ def main():
 
     try:
         getal = int(input("Vul begin-getal in: "))
+        if getal < 1:
+            raise ValueError
     except ValueError:
         print("Oeps, graag een positief heel getal boven 0 invullen.")
         exit(1)
