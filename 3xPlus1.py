@@ -16,7 +16,7 @@ def main():
     start = None
 
     try:
-        start = int(input("Enter starting point: "))
+        start = int(input("Vul begin-getal in: "))
     except ValueError:
         print("Oeps, graag een positief heel getal boven 0 invullen.")
         exit(1)
